@@ -16,7 +16,7 @@ let transporter = nodemailer.createTransport({
     },
 });
 app.post("/api/contact", (req, res) => {
-    const { fullname, email, message } = req.body;
+    const { fullname, email, message ,phone} = req.body;
 
     const output = `
         <p>You have a new contact request</p>
@@ -24,6 +24,7 @@ app.post("/api/contact", (req, res) => {
         <ul>  
             <li>Name: ${fullname}</li>
             <li>Email: ${email}</li>
+            <li>Phone No: ${phone}</li>
             </ul>
             <h3>Message</h3>
             <p>${message}</p>
